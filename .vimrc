@@ -1,45 +1,11 @@
-set nocompatible              " be iMproved, required
+" important!!
+set termguicolors
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" the configuration options should be placed before `colorscheme miramare`
+let g:miramare_enable_italic = 1
+let g:miramare_disable_italic_comment = 1
 
-" Plugins
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/nerdtree'
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'rking/ag.vim'
-Plugin 'jlanzarotta/bufexplorer'
-Plugin 'ervandew/supertab'
-Plugin 'scrooloose/syntastic'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'tpope/vim-endwise'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'tpope/vim-repeat'
-Plugin 'Yggdroot/indentLine'
-Plugin 'janko-m/vim-test'
-Plugin 'benmills/vimux'
-Plugin 'mhartington/oceanic-next'
-Plugin 'dart-lang/dart-vim-plugin'
-Plugin 'godlygeek/tabular'
-"Plugin 'plasticboy/vim-markdown'
-Plugin 'fatih/vim-go'
-Plugin 'natebosch/vim-lsc'
-Plugin 'tpope/vim-dadbod'
-Plugin 'tpope/vim-dotenv'
-Plugin 'tpope/vim-rhubarb'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'NLKNguyen/papercolor-theme'
-
-call vundle#end()
-
-let g:lsc_server_commands = {'dart': 'dart_language_server'}
-let g:lsc_auto_map = v:true
-
-set backspace=indent,eol,start
-let NERDTreeShowHidden=1
+colorscheme miramare
 
 let mapleader = ";"
 set noerrorbells visualbell t_vb=
@@ -47,6 +13,8 @@ set noerrorbells visualbell t_vb=
 filetype plugin indent on
 syntax on
 inoremap jj <Esc>
+
+set backspace=indent,eol,start
 
 set foldmethod=indent
 set foldnestmax=10
@@ -84,4 +52,10 @@ set background=dark
 
 map <leader>n :NERDTreeToggle<CR>
 map <leader>ntf :NERDTreeFind<cr>
-map <leader>mc :Mix compile<cr>
+
+"Gives us C + Up / Down to move lines up or down
+nmap <C-Up> ddkP
+nmap <C-Down> ddp
+
+vmap <C-Up> xkP`[V`]
+vmap <C-Down> xp`[V`]
