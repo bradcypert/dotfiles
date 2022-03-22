@@ -5,6 +5,11 @@
 
 cp ./.vimrc ~/.vimrc
 
+mkdir -p ~/.vim/pack/vendor/start
+mkdir -p ~/.vim/pack/plugins/start
+mkdir -p ~/.vim/pack/default/start/gruvbox
+mkdir -p ~/.vim/colors/miramare.vim
+
 rm -rf ~/.vim/pack/vendor/start/nerdtree
 git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/vendor/start/nerdtree
 vim -u NONE -c "helptags ~/.vim/pack/vendor/start/nerdtree/doc" -c q
@@ -30,8 +35,11 @@ git clone https://github.com/rust-lang/rust.vim ~/.vim/pack/plugins/start/rust.v
 rm -rf ~/.vim/pack/default/start/gruvbox
 git clone https://github.com/morhetz/gruvbox.git ~/.vim/pack/default/start/gruvbox
 
-rm -rf ~/.vim/colors/miramare.vim
-git clone https://github.com/franbach/miramare.git ~/.vim/colors/miramare.vim
+mkdir -p ~/.vim/pack/plugins/start
+git clone https://github.com/franbach/miramare.git ~/.vim/pack/plugins/start/miramare
+
+# rm -rf ~/.vim/colors/miramare.vim
+# git clone https://github.com/franbach/miramare.git ~/.vim/colors/miramare.vim
 
 rm -rf ~/.vim/pack/vendor/start/coc
 git clone --branch release https://github.com/neoclide/coc.nvim.git --depth=1 \
