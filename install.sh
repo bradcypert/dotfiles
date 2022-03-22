@@ -2,3 +2,32 @@
 
 ln -sf $(pwd)/vim/.vim ~/.vim
 ln -sf $(pwd)/vim/.vimrc ~/.vimrc
+
+git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/vendor/start/nerdtree
+vim -u NONE -c "helptags ~/.vim/pack/vendor/start/nerdtree/doc" -c q
+
+git clone --depth 1 \
+  https://github.com/vim-test/vim-test.git \
+  ~/.vim/pack/vendor/start/vim-test
+
+git clone --depth 1 \
+  https://github.com/thosakwe/vim-flutter.git \
+  ~/.vim/pack/vendor/start/vim-flutter
+
+git clone --depth 1 \
+  https://github.com/dart-lang/dart-vim-plugin.git \
+  ~/.vim/pack/vendor/start/dart-vim-plugin
+
+git clone https://github.com/rust-lang/rust.vim ~/.vim/pack/plugins/start/rust.vim
+
+git clone https://github.com/morhetz/gruvbox.git ~/.vim/pack/default/start/gruvbox
+
+git clone https://github.com/franbach/miramare.git ~/.vim/colors/miramare.vim
+
+git clone --branch release https://github.com/neoclide/coc.nvim.git --depth=1 \
+  ~/.vim/pack/vendor/start/coc
+
+mkdir -p ~/.vim/pack/tpope/start
+cd ~/.vim/pack/tpope/start
+git clone https://tpope.io/vim/surround.git
+vim -u NONE -c "helptags surround/doc" -c q
