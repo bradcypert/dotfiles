@@ -35,7 +35,7 @@ git clone https://github.com/rust-lang/rust.vim ~/.vim/pack/plugins/start/rust.v
 rm -rf ~/.vim/pack/default/start/gruvbox
 git clone https://github.com/morhetz/gruvbox.git ~/.vim/pack/default/start/gruvbox
 
-mkdir -p ~/.vim/pack/plugins/start
+rm ~/.vim/pack/plugins/start/miramare
 git clone https://github.com/franbach/miramare.git ~/.vim/pack/plugins/start/miramare
 
 # rm -rf ~/.vim/colors/miramare.vim
